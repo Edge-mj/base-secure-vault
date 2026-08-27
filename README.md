@@ -1,2 +1,25 @@
 # base-secure-vault
 Multi-signature wallet structures, time-locks, and cryptographic security access controls built for Base chain.
+
+Advanced smart contract security infrastructure providing time-locked execution functions and role-based access management.
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.25;
+
+contract BaseTimeLock {
+    address public admin;
+    uint256 public constant LOCK_TIME = 2 days;
+    uint256 public releaseTime;
+
+    constructor() {
+        admin = msg.sender;
+        releaseTime = block.timestamp + LOCK_TIME;
+    }
+
+    function withdrawFunds() public {
+        require(msg.sender == admin, "Unauthorized");
+        require(block.timestamp >= releaseTime, "Vault is locked");
+    }
+}
+```
