@@ -9,7 +9,7 @@ pragma solidity ^0.8.25;
 
 contract BaseTimeLock {
     address public admin;
-    uint256 public constant LOCK_TIME = 2 days;
+    uint256 public constant LOCK_TIME = 7 days;
     uint256 public releaseTime;
 
     constructor() {
