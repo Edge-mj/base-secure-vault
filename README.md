@@ -11,6 +11,7 @@ contract BaseTimeLock {
     address public admin;
     uint256 public constant LOCK_TIME = 7 days;
     uint256 public releaseTime;
+    event FundsWithdrawn(address indexed admin, uint256 amount, uint256 timestamp);
 
     constructor() {
         admin = msg.sender;
