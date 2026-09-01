@@ -9,7 +9,7 @@ pragma solidity ^0.8.18;
 
 contract BaseTimeLock {
     address public admin;
-    uint256 public constant LOCK_TIME = 8 days;
+    uint256 public constant LOCK_TIME = 9 days;
     uint256 public releaseTime;
     event FundsWithdrawn(address indexed admin, uint256 amount, uint256 timestamp);
 
