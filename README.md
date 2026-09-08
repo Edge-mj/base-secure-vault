@@ -5,7 +5,7 @@ Advanced smart contract security infrastructure providing time-locked execution 
 
 ```solidity
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.24;
+pragma solidity ^0.8.25;
 
 contract BaseTimeLock {
     address public admin;
